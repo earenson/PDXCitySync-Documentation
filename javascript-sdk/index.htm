@@ -94,14 +94,58 @@
             <div class="span9">
                 <h2>JavaScript SDK</h2>
                 <p>Overview of the PDX CitySync Javascript SDK and methods available to developers for use in their apps.</p>
-                <p><em>Information coming soon.</em></p>
+
                 <h3>Core Methods</h3>
-                <p>Available methods:</p>
+                <p>The PDX CitySync JavaScript SDK gives you access to the following API calls:</p>
                 <ul>
-                  <li>init</li>
-                  <li>resizeFrame</li>
-                  <li>sendAlert</li>
+                  <li><strong>CitySync.init</strong> - initialize and authenticate your application</li>
+                  <li><strong>CitySync.resizeFrame</strong> - send a call to resize your app's iframe on PDX CitySync</li>
+                  <li><strong>CitySync.sendAlert</strong> - send an alert to PDX CitySync's alerts framework</li>
                 </ul>
+                
+                <h3>CitySync.init()</h3>
+                <p>Before your application can receive user data, you'll need to first authenticate using the CitySync.init API call:</p>
+<pre>
+&lt;script type="text/javascript"&gt;
+    CitySync.init({
+        appID:'your-app-id',
+        appURL:'url-to-your-app'               
+    });
+&lt;/script&gt;
+</pre>
+                <p>CitySync.init will return 'success' on successful authentication, and two data objects will become available to your app: CitySync.user and CitySync.appdata:</p>
+                <p><strong>CitySync.user</strong> - contains user's location and interests.</p>
+<pre>
+CitySync.user = {
+    interests:["interest","interest"],
+    location:{
+      lat: num,
+      long: num
+    }
+</pre>
+                <p><strong>CitySync.appdata</strong> - contains the path to your application's full view on PDX CitySync and detail page in the app catalog:</p>
+<pre>
+CitySync.appdata ={
+  fullurl:"path-to-full-view",
+  catalogurl:"path-to-detail-page"
+}
+</pre>
+
+                <h3>CitySync.resizeFrame(height)</h3>
+                <p>You can call this method whenever you need to resize your apps' iframe on PDX CitySync:</p>
+<pre>
+&lt;script type="text/javascript"&gt;
+  CitySync.resizeFrame(document.body.scrollHeight);
+&lt;/script&gt;
+</pre>
+
+                <h3>CitySync.sentAlert(message)</h3>
+                <p>You can use sendAlert to send a message to PDX CitySync's alert framework, which will be displayed on the user's homepage:</p>
+<pre>
+&lt;script type="text/javascript"&gt;
+  CitySync.sendAlert("This is an alert message");
+&lt;/script&gt;
+</pre>
                 <p>Continue reading <a href="../sample-app/">Sample App: Local Schools</a></p>
             </div>
         </div>
