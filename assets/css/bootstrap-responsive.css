@@ -7,6 +7,8 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
+ 
+ body{margin-top: 60px;}
 .clearfix {
   *zoom: 1;
 }
@@ -137,6 +139,7 @@
   body {
     padding-left: 20px;
     padding-right: 20px;
+    margin-top: 0
   }
   .navbar-fixed-top {
     margin-left: -20px;
@@ -183,6 +186,9 @@
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
+
+  body{margin-top: 0}
+
   .row {
     margin-left: -20px;
     *zoom: 1;
