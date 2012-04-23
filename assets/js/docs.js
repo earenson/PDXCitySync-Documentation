@@ -1,7 +1,5 @@
 $(document).ready(function(){
     
-    console.log("Sisk boom pow");
-
     $('.well h4').each(function(){
         $(this).wrap(function(){
             var link = $('<a/>');
