@@ -94,18 +94,17 @@
                 <h3>Core Methods</h3>
                 <p>The PDX CitySync JavaScript SDK gives you access to the following API calls:</p>
                 <ul>
-                  <li><strong>CitySync.init</strong> - initialize and authenticate your application</li>
+                  <li><strong>CitySync.connnect</strong> - create connection to PDXCitySync and receive app and user data.<br>Accepts an optional callback if your application depends on user or app data.</li>
                   <li><strong>CitySync.resizeFrame</strong> - send a call to resize your app's iframe on PDX CitySync</li>
                   <li><strong>CitySync.sendAlert</strong> - send an alert to PDX CitySync's alerts framework</li>
                 </ul>
                 
-                <h3>CitySync.init()</h3>
-                <p>Before your application can receive user data, you'll need to first authenticate using the CitySync.init API call:</p>
+                <h3>CitySync.connect(<em>callback</em>)</h3>
+                <p>Before your application can receive user data, you'll need to first initiate the connection using the CitySync.connect API call:</p>
 <pre>
 &lt;script type="text/javascript"&gt;
-    CitySync.init({
-        appID:'your-app-id',
-        appURL:'url-to-your-app'               
+    CitySync.connect(function(){
+        // Proceed with your app
     });
 &lt;/script&gt;
 </pre>
