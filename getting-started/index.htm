@@ -59,7 +59,7 @@
             
             <h4 class="active">Getting Started</h4>
             <ul>
-                <li>Authentication and User Data</li>
+                <li>Connecting and User Data</li>
                 <li>Display Regions</li>
                 <li>Passing Data</li>
             </ul>
@@ -97,15 +97,18 @@
                 
                 <p>This will also include the PDX CitySync Base CSS file for you as well, helping to maintain visual consistency between apps on the platform.</p>
                 
-                <h3>Authentication and User Data</h3>
-                <p>After you&rsquo;ve included the PDX CitySync JavaScript SDK in your application, you&rsquo;ll fire an <code>CitySync.init()</code> call once your page has loaded. This call takes two parameters:</p>
+                <h3>Connecting and User Data &nbsp;<img src="../assets/img/badge_updated.png" /></h3>
+                <p>After you&rsquo;ve included the PDX CitySync JavaScript SDK in your application, you&rsquo;ll make a <code>CitySync.connect()</code> call once your page has loaded. This method accepts an optional callback function so that your application can continue once the connection is live, and the app and user data is available.</p>
+                <p>Here's a basic example:</p>
                 
-                <ul class="args">
-                    <li><strong>appID:</strong> The ID of your application you received upon submission</li>
-                    <li><strong>appURL:</strong> The URL where your app is hosted.</li>
-                </ul>
-                
-                <p>This information is passed to PDX CitySync, and matched against the information you provided when registering your app. Once authenticated, the SDK returns a Javascript object, <code>CitySync.appdata</code>, with the following information:</p>
+<pre>
+$(function(){
+    CitySync.connect(function(){
+        // Continue with the application
+    });      
+});
+</pre>
+                <p>Once the connection is established, the SDK returns a Javascript object, <code>CitySync.appdata</code>, with the following information:</p>
                 
                 <ul class="args">
                     <li><strong>fullurl:</strong> The path to your application&rsquo;s full view page on PDX CitySync</li>
